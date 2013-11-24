@@ -1,0 +1,30 @@
+{% extends "IgorTestBundle::layout.html.twig" %}
+
+{% block title %}Home{% endblock %}
+{% block content_header '' %}
+{% block content %}
+<div id="contentWrapper">
+    <div class="glow"></div>
+    <div id="wrapper">
+      {% include "IgorTestBundle:Templates:header.html.twig"%}
+        <div id="mainContent">
+            <div class="col1">
+            {% include "IgorTestBundle:Templates:slider.html.twig"%}
+                <div class="clear"></div>
+                {% for item in blockLeft %}
+                {{ item.content|raw }}
+                {% endfor %}
+                <div class="clear"></div>
+
+            </div><!--[END] //col1 -->
+
+            <div class="col2">
+                {% include "IgorTestBundle:Templates:sidebar.html.twig" with { route: route }%}
+            </div>				
+        </div><!--[END] //mainContent -->
+        <div class="clear"></div>
+    </div><!--[END] #wrapper -->
+    <div class="clear"></div>
+</div>
+ {% include "IgorTestBundle:Templates:footer.html.twig"%}
+{% endblock %}

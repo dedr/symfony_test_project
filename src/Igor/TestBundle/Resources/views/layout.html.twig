@@ -1,0 +1,14 @@
+{% block head %}
+    <link rel="icon" sizes="16x16" href="{{ asset('favicon.ico') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/igortest/css/reset.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/igortest/css/default.css') }}" />
+    <script src="{{ asset('bundles/igortest/js/jquery.js') }}"></script>
+    <script src="{{ asset('bundles/igortest/js/functions.js') }}"></script>
+    <script src="{{ asset('bundles/igortest/js/rotator.js') }}"></script>
+    <title>{% block title %}{% endblock %}</title>
+{% endblock %}
+{% block body %}
+    <div class="block">
+        {% block content %}{% endblock %}
+    </div>
+{% endblock %}

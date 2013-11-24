@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<database name="default"
+          namespace="Igore\TestBundle\Entity"
+          defaultIdMethod="native"
+>
+    <table name="block">
+        <column name="id"
+                type="integer"
+                required="true"
+                primaryKey="true"
+                autoIncrement="true"
+        />
+        <column name="page"
+                type="varchar"
+                primaryString="true"
+                size="150"
+        />
+        <column name="content"
+                type="text"
+                primaryString="true"
+                size="150"
+        />
+    </table>
+</database>

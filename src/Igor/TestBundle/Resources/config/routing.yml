@@ -1,0 +1,9 @@
+home:
+    pattern:  /
+    defaults: { _controller: IgorTestBundle:Default:index }
+about:
+    pattern:  /about
+    defaults: { _controller: IgorTestBundle:Default:about }    
+contact:
+    pattern:  /contact
+    defaults: { _controller: IgorTestBundle:Default:contact }    

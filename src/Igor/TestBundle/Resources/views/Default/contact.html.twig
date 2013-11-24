@@ -1,0 +1,55 @@
+{% extends "IgorTestBundle::layout.html.twig" %}
+{% block title %}Contact{% endblock %}
+{% block content_header '' %}
+{% block content %}
+<div id="contentWrapper">
+    <div class="glow"></div>
+    <div id="wrapper">
+     {% include "IgorTestBundle:Templates:header.html.twig"%}
+            <div id="mainContent">
+                <div class="col1">
+                    <div class="col1">
+                        <div class="pageTitle"><p>Get in touch with us.</p></div>				
+				{% for flashMessage in app.session.flashbag.get('sendMessage') %}
+                        <div class="succsess_box">
+                                    {{ flashMessage }}
+                            </div>
+                            {% endfor %}
+                            <form action="{{ path('contact') }}" method="post" {{ form_enctype(form) }} class="blogger">
+                                        {{ form_errors(form) }}
+
+                                        {{ form_row(form.name) }}
+                                        {{ form_row(form.email) }}
+                                        {{ form_row(form.subject) }}
+                                        {{ form_row(form.body) }}
+
+                                        {{ form_rest(form) }}
+
+                                    <input type="submit" class="submit" value="" />	
+                                </form>
+                                <!--[END] //contact form -->	
+
+                                <div class="clear"></div>										
+
+                            </div>
+                            <div class="clear"></div>										
+                        </div><!--[END] //col1 -->
+                        <div class="col2">
+				 {% include "IgorTestBundle:Templates:sidebar.html.twig" with { route: route }%}
+                                <!--[END] //sidebar module -->
+                            </div><!--[END] //col1 -->					
+                        </div><!--[END] //mainContent -->
+                        <div class="clear"></div>
+                    </div><!--[END] #wrapper -->
+                    <div class="clear"></div>
+                </div><!--[END] //contentWrapper -->
+
+                <div class="clear"></div>
+ {% include "IgorTestBundle:Templates:footer.html.twig"%}   
+<script>
+$(function() {
+$(".succsess_box").delay(3000).fadeOut("slow");
+})
+</script>
+
+{% endblock %}

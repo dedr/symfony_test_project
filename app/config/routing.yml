@@ -1,0 +1,4 @@
+igor_test:
+    resource: "@IgorTestBundle/Resources/config/routing.yml"
+    prefix:   /
+
